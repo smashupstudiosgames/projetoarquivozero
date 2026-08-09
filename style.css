@@ -4,8 +4,10 @@
    ========================================================= */
 
 @font-face {
-  font-family: "DK P.I.";
-  src: url("assets/fonts/DK P_I_.ttf") format("truetype");
+  /*font-family: "DK P.I.";*/
+  /*src: url("assets/fonts/DK P_I_.ttf") format("truetype");*/
+  font-family:"Elegant Typewriter","Courier New",monospace;
+  src: url("assets/fonts/ELEGANT TYPEWRITER Light.ttf") format("truetype");
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -392,7 +394,9 @@ a{color:inherit}
 
 .panel p:last-child{
   color:#b4b5b1;
-  font-family:Arial,sans-serif;
+  /*font-family:Arial,sans-serif;*/
+  /*src: url("assets/fonts/ELEGANT TYPEWRITER Light.ttf") format("truetype");*/
+  font-family:"Elegant Typewriter","Courier New",monospace;
   font-size:clamp(1rem,2vw,1.15rem);
   line-height:1.8;
   letter-spacing:.02em;
