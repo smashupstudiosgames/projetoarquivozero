@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <title>Apoiar o projeto | ARQUIVO Ø</title>
+  <meta name="description" content="Apoie o desenvolvimento independente de ARQUIVO Ø.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="apoio.css">
+</head>
+
+<body class="support-page">
+  <div class="shade" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">ARQUIVO Ø</a>
+    <nav class="support-nav" aria-label="Navegação">
+      <a href="index.html">VOLTAR AO INÍCIO</a>
+    </nav>
+  </header>
+
+  <main class="support-main">
+    <section class="support-card" aria-labelledby="support-title">
+      <p class="section-label">ARQUIVO DE APOIO</p>
+      <h1 id="support-title">APOIE O DESENVOLVIMENTO</h1>
+
+      <p class="support-intro">
+        ARQUIVO Ø é um projeto independente. Seu apoio ajuda a manter
+        o desenvolvimento, a produção de novos ambientes, equipamentos,
+        recursos técnicos e os custos necessários para levar o jogo adiante.
+      </p>
+
+      <div class="support-divider"></div>
+
+      <fieldset class="amount-fieldset">
+        <legend>ESCOLHA O VALOR DO APOIO</legend>
+
+        <div class="amount-grid" role="group" aria-label="Valores sugeridos">
+          <button type="button" class="amount-button" data-value="5">US$ 5</button>
+          <button type="button" class="amount-button" data-value="10">US$ 10</button>
+          <button type="button" class="amount-button" data-value="25">US$ 25</button>
+          <button type="button" class="amount-button" data-value="50">US$ 50</button>
+          <button type="button" class="amount-button" data-value="100">US$ 100</button>
+          <button type="button" class="amount-button" data-value="custom">OUTRO</button>
+        </div>
+
+        <div class="custom-amount" hidden>
+          <label for="customValue">OUTRO VALOR (US$)</label>
+          <input
+            id="customValue"
+            name="customValue"
+            type="number"
+            min="1"
+            step="1"
+            inputmode="decimal"
+            placeholder="Digite o valor">
+        </div>
+      </fieldset>
+
+      <div class="support-summary" aria-live="polite">
+        <span>SEU APOIO</span>
+        <strong id="selectedAmount">Selecione um valor</strong>
+      </div>
+
+      <button id="paypalButton" class="paypal-button" type="button" disabled>
+        CONTINUAR COM PAYPAL
+      </button>
+
+      <p id="paymentStatus" class="payment-status" aria-live="polite"></p>
+
+      <p class="payment-note">
+        O pagamento será concluído no ambiente do PayPal.
+        O site do ARQUIVO Ø não solicita nem armazena dados de cartão.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> SmashUp Studios Games</span>
+    <a href="mailto:arquivozero.game@gmail.com">arquivozero.game@gmail.com</a>
+  </footer>
+
+  <script src="apoio.js"></script>
+</body>
+</html>

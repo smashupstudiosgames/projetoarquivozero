@@ -1,0 +1,548 @@
+/* =========================================================
+   ELEGANT TYPEWRITER
+   Coloque os quatro arquivos .ttf em assets/fonts/
+   ========================================================= */
+
+@font-face {
+  font-family: "DK P.I.";
+  src: url("assets/fonts/DK P_I_.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DK P.I.";
+  src: url("assets/fonts/DK P_I_.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DK P.I.";
+  src: url("assets/fonts/DK P_I_.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DK P.I.";
+  src: url("assets/fonts/DK P_I_.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root{
+  --bg:#050607;
+  --text:#e8e8e4;
+  --muted:#a8aaa7;
+  --red:#c51f24;
+  --red2:#ff2a2a;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg);
+}
+
+body{
+  margin:0;
+  min-height:100%;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.22), rgba(0,0,0,.12) 55%, rgba(0,0,0,.58)),
+    url("assets/arquivozero-bg.png") center center / cover fixed no-repeat,
+    var(--bg);
+  color:var(--text);
+  font-family:"DK P.I.","Courier New",monospace;
+  letter-spacing:.08em;
+}
+
+a{color:inherit}
+
+.background{
+  display:none;
+}
+
+.shade{
+  position:fixed;
+  inset:0;
+  z-index:-4;
+  pointer-events:none;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.32), rgba(0,0,0,.08) 36%, rgba(0,0,0,.32) 74%, rgba(0,0,0,.82)),
+    radial-gradient(circle at 50% 45%, transparent 0 24%, rgba(0,0,0,.12) 48%, rgba(0,0,0,.72) 100%);
+}
+
+.scanlines{
+  position:fixed;
+  inset:0;
+  z-index:30;
+  pointer-events:none;
+  opacity:.10;
+  background:repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(255,255,255,.05) 3px,
+    transparent 4px
+  );
+  mix-blend-mode:soft-light;
+}
+
+.grain{
+  position:fixed;
+  inset:-30%;
+  z-index:31;
+  pointer-events:none;
+  opacity:.045;
+  background-image:
+    radial-gradient(circle, #fff 0 1px, transparent 1.1px),
+    radial-gradient(circle, #fff 0 .7px, transparent .8px);
+  background-size:7px 7px, 11px 11px;
+  animation:grain .25s steps(2) infinite;
+}
+
+.site-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:40;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:28px 34px;
+  background:linear-gradient(to bottom, rgba(0,0,0,.58), transparent);
+}
+
+.brand{
+  text-decoration:none;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:1rem;
+  letter-spacing:.35em;
+  font-weight:500;
+}
+
+.nav{
+  display:flex;
+  gap:42px;
+}
+
+.nav a{
+  position:relative;
+  color:#c8c9c5;
+  text-decoration:none;
+  font-size:.82rem;
+  letter-spacing:.26em;
+}
+
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-8px;
+  width:0;
+  height:1px;
+  background:var(--red2);
+  transition:width .2s ease;
+}
+
+.nav a:hover::after,
+.nav a:focus-visible::after{width:100%}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:0;
+  padding:8px;
+}
+
+.menu-toggle span{
+  display:block;
+  width:25px;
+  height:1px;
+  margin:6px 0;
+  background:#ddd;
+}
+
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:125px 24px 190px;
+}
+
+.hero-content{
+  width:min(960px,95vw);
+  margin-top:4vh;
+  text-align:center;
+  animation:appear 1.2s ease both;
+}
+
+.kicker{
+  margin:0 0 18px;
+  color:#a5a8a4;
+  font-size:.76rem;
+  letter-spacing:.34em;
+}
+
+.title{
+  position:relative;
+  margin:0;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:clamp(4.5rem,12vw,9.5rem);
+  font-weight:700;
+  line-height:.92;
+  letter-spacing:.13em;
+  transform:scaleX(.86);
+  text-shadow:
+    0 3px 2px rgba(0,0,0,.85),
+    0 0 20px rgba(255,255,255,.09);
+  filter:contrast(1.1);
+}
+
+.title::before,
+.title::after{
+  content:attr(data-text);
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+}
+
+.title::before{
+  color:#d8d8d5;
+  transform:translateX(-3px);
+  animation:glitch1 9s infinite;
+}
+
+.title::after{
+  color:#bfc0bc;
+  transform:translateX(3px);
+  animation:glitch2 9s infinite;
+}
+
+.red-line{
+  width:190px;
+  height:1px;
+  margin:30px auto 20px;
+  background:linear-gradient(to right, transparent, var(--red), transparent);
+  box-shadow:0 0 12px rgba(255,0,0,.28);
+}
+
+.subtitle{
+  margin:0 auto 44px;
+  color:#b7b9b5;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:clamp(.9rem,2vw,1.35rem);
+  font-weight:300;
+  line-height:1.6;
+  letter-spacing:.33em;
+}
+
+.support{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  min-width:min(460px,92vw);
+  min-height:76px;
+  padding:17px 30px;
+  border:1px solid var(--red2);
+  border-radius:4px;
+  background:rgba(20,0,0,.32);
+  box-shadow:
+    inset 0 0 24px rgba(145,0,0,.12),
+    0 0 14px rgba(255,0,0,.12);
+  text-decoration:none;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:1.15rem;
+  letter-spacing:.26em;
+  transition:.2s ease;
+  backdrop-filter:blur(2px);
+}
+
+.support:hover,
+.support:focus-visible{
+  background:rgba(125,0,0,.32);
+  box-shadow:
+    inset 0 0 28px rgba(255,0,0,.2),
+    0 0 26px rgba(255,0,0,.24);
+  transform:translateY(-2px);
+}
+
+.heart{
+  color:var(--red2);
+  font-size:1.6rem;
+  filter:drop-shadow(0 0 7px rgba(255,0,0,.45));
+}
+
+.support-message{
+  margin:12px 0 0;
+  min-height:18px;
+  color:#969793;
+  font-size:.74rem;
+  letter-spacing:.16em;
+  opacity:0;
+  transition:opacity .25s ease;
+}
+
+.support-message.visible{opacity:1}
+
+.bottom-info{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:26px;
+  text-align:center;
+}
+
+.developed{
+  margin:0 0 5px;
+  color:#90928e;
+  font-size:.68rem;
+  letter-spacing:.24em;
+}
+
+.studio-mark{
+  width:47px;
+  height:47px;
+  margin:0 auto 4px;
+  display:grid;
+  place-items:center;
+  color:#b8bab6;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:2.25rem;
+  font-weight:500;
+  transform:skewY(-12deg);
+  opacity:.9;
+}
+
+.studio-name{
+  margin:0;
+  color:#b2b4b0;
+  font-size:.86rem;
+  letter-spacing:.35em;
+}
+
+.small-line{
+  width:90px;
+  height:1px;
+  margin:18px auto 13px;
+  background:linear-gradient(to right,transparent,var(--red),transparent);
+}
+
+.email{
+  display:inline-block;
+  color:#a0a29e;
+  text-decoration:none;
+  font-size:.75rem;
+  letter-spacing:.12em;
+}
+
+.email:hover{color:#ddd}
+
+.scroll{
+  display:block;
+  width:40px;
+  margin:10px auto 0;
+  color:#a9aaa6;
+  text-decoration:none;
+  font-size:2rem;
+  line-height:1;
+  animation:float 2.2s ease-in-out infinite;
+}
+
+.panel{
+  position:relative;
+  min-height:75vh;
+  display:grid;
+  place-items:center;
+  padding:90px 24px;
+  background:
+    linear-gradient(rgba(4,5,6,.88),rgba(4,5,6,.94));
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.panel-inner{
+  width:min(760px,92vw);
+  text-align:left;
+}
+
+.section-label{
+  color:var(--red2);
+  font-size:.72rem;
+  letter-spacing:.28em;
+}
+
+.panel h2{
+  margin:.5rem 0 1rem;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:clamp(2rem,5vw,4.2rem);
+  font-weight:400;
+  letter-spacing:.08em;
+}
+
+.panel p:last-child{
+  color:#b4b5b1;
+  font-family:Arial,sans-serif;
+  font-size:clamp(1rem,2vw,1.15rem);
+  line-height:1.8;
+  letter-spacing:.02em;
+}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:22px 28px;
+  color:#777a76;
+  background:#020303;
+  font-size:.68rem;
+  letter-spacing:.12em;
+}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(12px);filter:blur(3px)}
+  to{opacity:1;transform:none;filter:none}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(6px)}
+}
+
+@keyframes grain{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(2%,-1%)}
+  50%{transform:translate(-1%,2%)}
+  75%{transform:translate(1%,1%)}
+  100%{transform:translate(0,0)}
+}
+
+@keyframes glitch1{
+  0%,93%,95%,100%{opacity:0;clip-path:inset(0)}
+  93.4%{opacity:.2;clip-path:inset(18% 0 62% 0)}
+  94.1%{opacity:.12;clip-path:inset(72% 0 9% 0)}
+}
+
+@keyframes glitch2{
+  0%,96%,98%,100%{opacity:0;clip-path:inset(0)}
+  96.5%{opacity:.16;clip-path:inset(45% 0 33% 0)}
+  97.2%{opacity:.1;clip-path:inset(7% 0 78% 0)}
+}
+
+@media (max-width:760px){
+  .site-header{
+    padding:20px 18px;
+  }
+
+  .brand{
+    font-size:.86rem;
+    letter-spacing:.22em;
+  }
+
+  .menu-toggle{display:block}
+
+  .nav{
+    position:absolute;
+    top:62px;
+    right:16px;
+    display:none;
+    width:190px;
+    flex-direction:column;
+    gap:0;
+    padding:8px 0;
+    border:1px solid rgba(255,255,255,.1);
+    background:rgba(4,5,6,.93);
+    backdrop-filter:blur(8px);
+  }
+
+  .nav.open{display:flex}
+
+  .nav a{
+    padding:14px 18px;
+  }
+
+  .nav a::after{display:none}
+
+  .hero{
+    align-items:flex-start;
+    padding-top:25vh;
+    padding-bottom:240px;
+  }
+
+  .hero-content{margin-top:0}
+
+  .kicker{display:none}
+
+  .title{
+    font-size:clamp(3.4rem,11vw,6rem);
+    letter-spacing:.07em;
+  }
+
+  .subtitle{
+    letter-spacing:.2em;
+    font-size:.86rem;
+  }
+
+  .support{
+    min-height:64px;
+    gap:14px;
+    padding:15px 18px;
+    font-size:.93rem;
+    letter-spacing:.18em;
+  }
+
+  .bottom-info{bottom:22px}
+  .studio-name{letter-spacing:.22em;font-size:.75rem}
+  .footer{flex-direction:column;text-align:center}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    scroll-behavior:auto!important;
+    transition:none!important;
+  }
+}
+
+
+/* Tipografia ARQUIVO Ø */
+.title,
+.support,
+.panel h2,
+.brand {
+  font-family: "DK P.I.", "Courier New", monospace;
+  font-weight: 700;
+}
+
+.nav,
+.subtitle,
+.studio-name,
+.email,
+.footer {
+  font-family: "DK P.I.", "Courier New", monospace;
+  font-weight: 400;
+}
+
+.kicker,
+.developed,
+.section-label {
+  font-family: "DK P.I.", "Courier New", monospace;
+  font-weight: 300;
+}
+
+/* Classe pronta para relatos, anotações ou diário */
+.typewriter-italic {
+  font-family: "DK P.I.", "Courier New", monospace;
+  font-style: italic;
+  font-weight: 400;
+}
