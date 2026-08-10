@@ -271,6 +271,7 @@
   max-width: 650px;
   margin: 0 auto 18px;
   color: #b9bbb7;
+  font-family:"Elegant Typewriter","Courier New",monospace;
   font-size: clamp(.94rem, 2vw, 1.08rem);
   line-height: 1.9;
   letter-spacing: .035em;
@@ -304,6 +305,7 @@
   max-width: 560px;
   margin: 28px auto 0;
   color: #777a76;
+  font-family:"Elegant Typewriter","Courier New",monospace;
   font-size: .72rem;
   line-height: 1.7;
   letter-spacing: .07em;
