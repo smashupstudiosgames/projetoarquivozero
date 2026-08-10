@@ -6,6 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectedAmount = document.getElementById("selectedAmount");
   const paypalButton = document.getElementById("paypalButton");
   const paymentStatus = document.getElementById("paymentStatus");
+  const pixTab = document.getElementById("pixTab");
+  const paypalTab = document.getElementById("paypalTab");
+  const pixPanel = document.getElementById("pixPanel");
+  const paypalPanel = document.getElementById("paypalPanel");
+  const copyPixButton = document.getElementById("copyPixButton");
+  const pixStatus = document.getElementById("pixStatus");
+  const PIX_COPIA_E_COLA = "00020126970014BR.GOV.BCB.PIX01367276c08d-c107-4b06-8600-6f2b7116c4fd0235Apoio ao desenvolvimento do projeto5204000053039865802BR5923Hilton Carneiro Almeida6009SAO PAULO62140510AIbaJDlasK63042F31";
+
 
   const PAYPAL_CLIENT_ID = "AQVY-Hqul9CWhXQ55lRoUjsRjcDDJtCXMGZmjI8h1nD_JaXS_ssfsYYcUEQCu1AgiRMLzEM5_0Y7uE5Q";
   const CURRENCY = "USD";
@@ -54,6 +62,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   customInput.addEventListener("input", () => setValue(customInput.value));
+
+  function showPaymentMethod(method) {
+    const pix = method === "pix";
+    pixPanel.hidden = !pix;
+    paypalPanel.hidden = pix;
+    pixTab.classList.toggle("selected", pix);
+    paypalTab.classList.toggle("selected", !pix);
+    pixTab.setAttribute("aria-selected", String(pix));
+    paypalTab.setAttribute("aria-selected", String(!pix));
+  }
+
+  pixTab.addEventListener("click", () => showPaymentMethod("pix"));
+  paypalTab.addEventListener("click", () => showPaymentMethod("paypal"));
+
+  copyPixButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(PIX_COPIA_E_COLA);
+      copyPixButton.textContent = "PIX COPIADO ✓";
+      pixStatus.textContent = "Código PIX copiado.";
+      setTimeout(() => {
+        copyPixButton.textContent = "COPIAR PIX";
+        pixStatus.textContent = "";
+      }, 2500);
+    } catch {
+      pixStatus.textContent = "Não foi possível copiar automaticamente.";
+    }
+  });
 
   paypalButton.addEventListener("click", async () => {
     if (!value || processing) return;

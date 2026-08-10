@@ -35,6 +35,22 @@
 
       <div class="support-divider"></div>
 
+      <div class="payment-methods">
+        <p class="payment-method-title">ESCOLHA COMO DESEJA APOIAR</p>
+        <div class="payment-tabs" role="tablist">
+          <button id="pixTab" class="payment-tab selected" type="button" role="tab" aria-selected="true">PIX</button>
+          <button id="paypalTab" class="payment-tab" type="button" role="tab" aria-selected="false">PAYPAL</button>
+        </div>
+        <section id="pixPanel" class="payment-panel pix-panel" role="tabpanel">
+          <p class="pix-title">APOIO VIA PIX</p>
+          <div class="pix-qr-frame">
+            <img src="assets/nu-qrcode-pix.png" class="pix-qrcode" alt="QR Code PIX para apoiar o desenvolvimento do ARQUIVO Ø">
+          </div>
+          <p class="pix-instruction">Aponte a câmera do celular para o QR Code ou copie o código PIX.</p>
+          <button id="copyPixButton" class="pix-copy-button" type="button">COPIAR PIX</button>
+          <p id="pixStatus" class="pix-status" aria-live="polite"></p>
+        </section>
+        <section id="paypalPanel" class="payment-panel" role="tabpanel" hidden>
       <fieldset class="amount-fieldset">
         <legend>ESCOLHA O VALOR DO APOIO</legend>
 
@@ -75,6 +91,8 @@
         O pagamento será concluído no ambiente do PayPal.
         O site do ARQUIVO Ø não solicita nem armazena dados de cartão.
       </p>
+        </section>
+      </div>
     </section>
   </main>
 

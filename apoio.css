@@ -315,3 +315,19 @@
   .cancel-message { text-align: left; }
   .leave-link { line-height: 1.5; }
 }
+
+.payment-method-title{margin:0 0 16px;color:#d1d2ce;font-size:.8rem;letter-spacing:.22em}
+.payment-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
+.payment-tab{min-height:56px;border:1px solid rgba(255,255,255,.18);border-radius:3px;background:rgba(0,0,0,.34);color:#e7e7e2;font-family:"DK P.I.","Courier New",monospace;font-size:.95rem;font-weight:700;letter-spacing:.16em;cursor:pointer;transition:.18s ease}
+.payment-tab:hover,.payment-tab:focus-visible{border-color:#c51f24;background:rgba(91,0,0,.20);outline:none}
+.payment-tab.selected{border-color:#ff2a2a;background:rgba(135,0,0,.29);box-shadow:inset 0 0 20px rgba(255,0,0,.08)}
+.payment-panel[hidden]{display:none!important}
+.pix-panel{text-align:center}
+.pix-title{margin:4px 0 18px;color:#bfc1bd;font-size:.78rem;letter-spacing:.22em}
+.pix-qr-frame{width:min(310px,82vw);margin:0 auto 18px;padding:14px;border:1px solid rgba(255,42,42,.68);border-radius:4px;background:#fff;box-shadow:0 0 24px rgba(255,0,0,.10),0 18px 45px rgba(0,0,0,.32)}
+.pix-qrcode{display:block;width:100%;height:auto;background:#fff}
+.pix-instruction{max-width:520px;margin:0 auto 18px;color:#a9aba7;font-family:"Elegant Typewriter","Courier New",monospace;font-size:.82rem;line-height:1.7;letter-spacing:.05em}
+.pix-copy-button{width:min(420px,100%);min-height:60px;border:1px solid #ff2a2a;border-radius:3px;background:rgba(77,0,0,.34);color:#fff;font-family:"DK P.I.","Courier New",monospace;font-size:.95rem;font-weight:700;letter-spacing:.18em;cursor:pointer;transition:.18s ease}
+.pix-copy-button:hover,.pix-copy-button:focus-visible{background:rgba(137,0,0,.38);box-shadow:0 0 22px rgba(255,0,0,.16);transform:translateY(-1px);outline:none}
+.pix-status{min-height:22px;margin:12px 0 0;color:#b9bbb7;text-align:center;font-size:.74rem;letter-spacing:.06em}
+@media(max-width:620px){.payment-tabs{gap:9px}.payment-tab{min-height:52px;font-size:.84rem}.pix-qr-frame{width:min(280px,88vw);padding:11px}.pix-copy-button{min-height:56px;font-size:.86rem}}
