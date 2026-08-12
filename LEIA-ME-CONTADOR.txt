@@ -1,0 +1,11 @@
+ARQUIVO Ø — CONTADOR DE ACESSOS
+
+1. Coloque a pasta functions na raiz do projeto.
+2. No Cloudflare Pages:
+   Settings > Bindings > Add > KV namespace
+3. Nome do binding: CONTADOR
+4. Se precisar criar um namespace, use por exemplo: arquivozero_contador
+5. Faça novo deploy.
+
+O endpoint será /api/contador
+O contador registra visitas/page loads. Recarregar a página conta novamente.

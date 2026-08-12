@@ -550,3 +550,25 @@ a{color:inherit}
   font-style: italic;
   font-weight: 400;
 }
+
+
+/* CONTADOR DE ACESSOS */
+.access-counter{
+  display:inline-flex;
+  align-items:baseline;
+  justify-content:center;
+  gap:.55rem;
+  color:#777a76;
+  font-family:"DK P.I.","Courier New",monospace;
+  letter-spacing:.12em;
+  white-space:nowrap;
+}
+.access-counter strong{
+  color:#b7b9b5;
+  font-size:.82rem;
+  font-weight:400;
+  letter-spacing:.15em;
+}
+@media(max-width:760px){
+  .access-counter{width:100%;white-space:normal}
+}
