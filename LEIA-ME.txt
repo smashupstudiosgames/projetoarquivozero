@@ -1,1 +1,0 @@
-Página de apoio integrada com PIX e PayPal. Preserve os demais assets e fontes do projeto original.
