@@ -11,7 +11,9 @@
     enviar.disabled=true; enviar.textContent="ENVIANDO...";
     status.textContent=""; status.className="feedback-status";
     try{
-      const r=await fetch("/api/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.fromEntries(new FormData(form).entries()))});
+      const dados=Object.fromEntries(new FormData(form).entries());
+      dados.autorizaPublicacao=dados.autorizaPublicacao==="sim";
+      const r=await fetch("/api/feedback",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)});
       const d=await r.json().catch(()=>({}));
       if(!r.ok)throw new Error(d.error||"Não foi possível enviar o feedback.");
       form.reset(); status.textContent="FEEDBACK REGISTRADO. OBRIGADO POR PARTICIPAR DO ARQUIVO Ø."; status.classList.add("success");

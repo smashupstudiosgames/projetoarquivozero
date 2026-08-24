@@ -251,6 +251,14 @@
           <small><span id="feedbackChars">0</span>/3000</small>
         </div>
 
+        <label class="feedback-consent">
+          <input id="feedbackAutoriza" name="autorizaPublicacao" type="checkbox" value="sim">
+          <span>
+            Autorizo a publicação desta mensagem nos REGISTROS DA COMUNIDADE Ø.
+            Meu e-mail não será publicado.
+          </span>
+        </label>
+
         <div class="feedback-actions">
           <button class="feedback-button secondary" type="reset">LIMPAR</button>
           <button id="feedbackEnviar" class="feedback-button primary" type="submit">ENVIAR</button>
@@ -271,6 +279,20 @@
     </div>
   </section>
 
+  <section id="comunidade" class="panel community-panel">
+    <div class="panel-inner">
+      <p class="section-label">ARQUIVO Ø5</p>
+      <h2>REGISTROS DA COMUNIDADE Ø</h2>
+      <p class="community-intro">
+        Mensagens autorizadas por seus autores e selecionadas pela equipe do ARQUIVO Ø.
+      </p>
+
+      <div id="communityRecords" class="community-records">
+        <p class="community-loading">CARREGANDO REGISTROS...</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <span>© <span id="year"></span> SmashUp Studios Games</span>
     <span class="access-counter" aria-live="polite">
@@ -281,5 +303,6 @@
 
   <script src="script.js"></script>
   <script src="feedback.js"></script>
+  <script src="comunidade.js"></script>
 </body>
 </html>

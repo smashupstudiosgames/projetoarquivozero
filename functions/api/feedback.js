@@ -14,6 +14,18 @@ if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
   );
 }
   const id=crypto.randomUUID(), recebidoEm=new Date().toISOString();
-  await env.FEEDBACK.put(`feedback:${recebidoEm}:${id}`,JSON.stringify({id,nome,email:email||null,tema,mensagem,recebidoEm}));
+  const autorizaPublicacao=b.autorizaPublicacao===true;
+  const registro={
+    id,
+    nome,
+    email:email||null,
+    tema,
+    mensagem,
+    recebidoEm,
+    autorizaPublicacao,
+    publicado:false,
+    destaque:false
+  };
+  await env.FEEDBACK.put(`feedback:${recebidoEm}:${id}`,JSON.stringify(registro));
   return Response.json({ok:true,id},{headers:{"Cache-Control":"no-store"}});
 }

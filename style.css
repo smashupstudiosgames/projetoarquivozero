@@ -612,3 +612,113 @@ a{color:inherit}
 .feedback-direct p{margin:0 0 10px;color:#8e908c;font-size:.78rem;letter-spacing:.08em}
 .feedback-credits{margin-top:38px}
 @media(max-width:620px){.feedback-form{padding:20px 16px}.feedback-actions{flex-direction:column-reverse}.feedback-button{width:100%}}
+
+
+/* =========================================================
+   AUTORIZAÇÃO DE PUBLICAÇÃO + REGISTROS DA COMUNIDADE Ø
+   ========================================================= */
+
+.feedback-consent{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin:8px 0 24px;
+  color:#9ea09c;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:.74rem;
+  line-height:1.6;
+  letter-spacing:.05em;
+  cursor:pointer;
+}
+
+.feedback-consent input{
+  width:18px;
+  height:18px;
+  margin:2px 0 0;
+  flex:0 0 auto;
+  accent-color:var(--red2);
+}
+
+.community-panel{
+  min-height:60vh;
+}
+
+.community-intro{
+  margin-bottom:30px!important;
+}
+
+.community-records{
+  display:grid;
+  gap:18px;
+  margin-top:26px;
+}
+
+.community-card{
+  position:relative;
+  padding:24px;
+  border:1px solid rgba(255,255,255,.10);
+  border-left:2px solid rgba(255,42,42,.48);
+  border-radius:3px;
+  background:rgba(0,0,0,.26);
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.community-card.featured{
+  border-color:rgba(255,42,42,.38);
+  box-shadow:0 15px 40px rgba(80,0,0,.16);
+}
+
+.community-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:18px;
+  color:#777a76;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:.67rem;
+  letter-spacing:.15em;
+}
+
+.community-card blockquote{
+  margin:0;
+  color:#c9cbc7;
+  font-family:"DK P.I.","Courier New",monospace;
+  font-size:clamp(.95rem,2vw,1.08rem);
+  line-height:1.75;
+  letter-spacing:.025em;
+}
+
+.community-author{
+  margin:18px 0 0!important;
+  color:#999b97!important;
+  font-size:.82rem!important;
+  text-align:right;
+}
+
+.community-featured{
+  display:inline-block;
+  margin-top:14px;
+  color:var(--red2);
+  font-size:.62rem;
+  letter-spacing:.18em;
+}
+
+.community-loading,
+.community-empty{
+  padding:22px;
+  border:1px dashed rgba(255,255,255,.10);
+  color:#777a76!important;
+  text-align:center;
+  font-size:.72rem!important;
+  letter-spacing:.13em!important;
+}
+
+@media(max-width:620px){
+  .community-meta{
+    flex-direction:column;
+    gap:5px;
+  }
+  .community-card{
+    padding:20px 17px;
+  }
+}
