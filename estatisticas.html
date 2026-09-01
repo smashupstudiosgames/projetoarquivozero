@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#050607">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>ARQUIVO Ø | Estatísticas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="estatisticas.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body class="stats-body">
+  <div class="background" aria-hidden="true"></div>
+  <div class="shade" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <main class="stats-shell">
+    <header class="stats-header">
+      <a class="brand" href="/" aria-label="Voltar ao ARQUIVO Ø">ARQUIVO Ø</a>
+      <span class="stats-private">ACESSO RESTRITO</span>
+    </header>
+
+    <section class="stats-panel">
+      <p class="section-label">CENTRAL Ø</p>
+      <h1>REGISTROS DE ACESSO</h1>
+      <p class="stats-note">Estatísticas agregadas por país e estado/região. Nenhum endereço IP é armazenado.</p>
+
+      <div class="stats-total">
+        <span>TOTAL DE ACESSOS</span>
+        <strong id="statsTotal">------</strong>
+      </div>
+
+      <div class="stats-grid">
+        <section class="stats-box">
+          <div class="stats-box-title">
+            <h2>PAÍSES</h2>
+            <span id="statsCountriesCount">0 REGISTROS</span>
+          </div>
+          <div id="statsCountries" class="stats-list">
+            <p class="stats-loading">CARREGANDO...</p>
+          </div>
+        </section>
+
+        <section class="stats-box">
+          <div class="stats-box-title">
+            <h2>ESTADOS / REGIÕES</h2>
+            <span id="statsRegionHint">SELECIONE UM PAÍS</span>
+          </div>
+          <div id="statsRegions" class="stats-list">
+            <p class="stats-empty">Selecione um país para consultar suas regiões.</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="stats-footer">
+        <span id="statsUpdated">ÚLTIMA LEITURA: --</span>
+        <button id="statsReload" type="button">ATUALIZAR</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="estatisticas.js"></script>
+</body>
+</html>
