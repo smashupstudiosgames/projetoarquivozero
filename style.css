@@ -249,6 +249,46 @@ a{color:inherit}
   letter-spacing:.33em;
 }
 
+/*---------------------------------------------*/
+/*ADICIONADO EM 17/09/2026 --------------------*/
+/*DIÁRIO DE DESENVOLVIMENTO -------------------*/
+/*---------------------------------------------*/
+.aviso-entidades {
+  margin-top: 30px;
+  padding: 15px 20px;
+  border-left: 3px solid rgb(250, 218, 38);
+  color: rgb(250, 218, 38);
+}
+
+.aviso-entidades p {
+  margin: 5px 0;
+}
+
+.imagem-inclinada {
+  width: 400px;
+  height: 500px;
+  
+  transform: rotate(-30deg);
+  transform-origin: center center center;
+  display: block;
+
+  opacity: 0.35;
+  filter: grayscale(100%);
+
+  position: absolute;
+  z-index: 0;
+}
+
+.diario-conteudo {
+  position: relative;
+}
+
+.diario-texto {
+  position: relative;
+  z-index: 1;
+}
+/*---------------------------------------------*/
+
 .support{
   display:inline-flex;
   align-items:center;
@@ -403,6 +443,22 @@ a{color:inherit}
   line-height:1.8;
   letter-spacing:.02em;
 }
+
+/*---------------------------------------------*/
+/*ADICIONADO EM 17/09/2026 --------------------*/
+/*DIÁRIO DE DESENVOLVIMENTO -------------------*/
+/*FUNÇÃO: -------------------------------------*/
+/*   A FONTE NÃO DEVE SER ALTERADA ------------*/
+/*---------------------------------------------*/
+.diario-texto p {
+    color: #b4b5b1;
+    font-family: "DK P.I.", "Courier New", monospace;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 400;
+    line-height: 1.8;
+    letter-spacing: .02em;
+}
+/*---------------------------------------------*/
 
 .footer{
   display:flex;
