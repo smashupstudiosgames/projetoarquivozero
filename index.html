@@ -42,7 +42,7 @@
     <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-
+    
     <!-- <nav class="nav" aria-label="Navegação principal"> -->
     <nav class="nav">
       <a href="#sobre">SOBRE</a>
@@ -51,6 +51,9 @@
       <a href="#quem_somos">QUEM SOMOS?</a>
       <a href="#contato">CONTATO</a>
     </nav>
+    <button id="soundToggle" class="sound-toggle" aria-label="Ativar ou desativar som ambiente">
+      🔊 SOM
+    </button>
   </header>
 
   <main id="inicio" class="hero">
@@ -65,6 +68,8 @@
         UM JOGO INVESTIGATIVO DE TERROR<br>
         EM DESENVOLVIMENTO
       </p>
+
+      <p>🎧 <em>Para uma experiência mais imersiva, recomendamos o uso de fones de ouvido.</em></p>
 
       <a class="support" href="apoiar.html">
         <span class="heart" aria-hidden="true">♥</span>
@@ -83,6 +88,15 @@
       <a class="scroll" href="#sobre" aria-label="Rolar para baixo">⌄</a>
     </section>
   </main>
+
+  <!-- SOM AMBIENTE -->
+  <audio id="ambientSound" loop preload="auto">
+    <source src="assets/audio/arquivozero-ambiente.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- <button id="soundToggle" class="sound-toggle" aria-label="Ativar ou desativar som ambiente">
+    🔊 SOM
+  </button> -->
 
   <section id="sobre" class="panel">
     <div class="panel-inner">
@@ -117,11 +131,9 @@
       <p>Há também relatos de uma sensação difícil de explicar: a certeza repentina de que existe alguém no mesmo ambiente, mesmo quando nada pode ser visto.</p>
       <p>Em outros casos ocorre o contrário. A pessoa não percebe nada durante a investigação. Somente mais tarde, ao revisar fotografias, gravações ou áudio, encontra algo que não recorda ter visto naquele momento.</p>
       <p>E talvez esse seja o aspecto mais inquietante.</p>
-      <p>Nem sempre sabemos se a entidade está tentando se manifestar... ou se está tentando fazer com que você vá até ela.</p>
-      <p>
-        Entidades também podem pregar peças. Ora se manifestam como crianças, ora assumem formas aterradoras.
-      </p>
-      <p style="color: rgb(250, 38, 38);">Nem sempre sabemos se a entidade está tentando se manifestar... ou se está tentando fazer com que você vá até ela.
+      <!-- <p>Nem sempre sabemos se a entidade está tentando se manifestar... ou se está tentando fazer com que você vá até ela.</p> -->
+      <p>Entidades também podem pregar peças. Ora se manifestam como crianças, ora assumem formas aterradoras.</p>
+      <p style="color: rgb(250, 38, 38);">“Nem sempre sabemos se a entidade está tentando se comunicar ou pedir ajuda. Ou se está tentando fazer com que você vá até ela.”
     </div>
   </section>
 
