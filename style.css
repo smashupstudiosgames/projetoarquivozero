@@ -901,6 +901,11 @@ a {
   /* text-align: center; */
 }
 
+/* ADICIONADO POR HILEL: 30/09/2026 */
+.diario-link {
+    text-align: center;
+}
+
 @media(max-width:620px) {
   .feedback-form {
     padding: 20px 16px
