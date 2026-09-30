@@ -1025,3 +1025,7 @@ a {
     padding: 20px 17px;
   }
 }
+/* =========================================================
+   MANTENEDORES / PARTNERS
+   ========================================================= */
+.maintainer-tier{margin-top:38px}.maintainer-tier h3{margin:0 0 24px;color:#d4d5d1;font-size:1rem;letter-spacing:.22em;text-align:center}.maintainer-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:34px}.maintainer-logos img{display:block;width:auto;max-width:190px;height:90px;object-fit:contain;filter:grayscale(15%);opacity:.92;transition:.2s ease}.maintainer-logos img:hover{filter:none;opacity:1;transform:translateY(-2px)}.maintainers-thanks{text-align:center!important;color:#c6c8c4!important}@media(max-width:760px){.maintainer-logos{gap:24px}.maintainer-logos img{max-width:145px;height:72px}}
