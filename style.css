@@ -268,6 +268,17 @@ a {
   margin: 5px 0;
 }
 
+/*---------------------------------------------*/
+/* ADICIONADO POR HILEL: 30/09/2026 -----------*/
+/*---------------------------------------------*/
+.aviso {
+  margin: 2;
+  color: #b2b4b0;
+  /* font-size: .96rem; */
+  font-size: .80rem;
+  letter-spacing: .20em;
+}
+
 .imagem-inclinada {
   width: 400px;
   height: 500px;
