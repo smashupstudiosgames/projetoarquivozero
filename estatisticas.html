@@ -18,23 +18,23 @@
   <div class="scanlines" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
-  <main class="stats-shell">
-    <header class="stats-header">
-      <a class="brand" href="/" aria-label="Voltar ao ARQUIVO Ø">ARQUIVO Ø</a>
-      <span class="stats-private">ACESSO RESTRITO</span>
-    </header>
+  <main class="wrap">
+    <div class="top">
+        <div>
+            <p class="eyebrow">ARQUIVO Ø · ADMIN</p>
+            <h1>REGISTROS DE ACESSO</h1>
+        </div>
+
+        <a class="btn" href="admin/index.html">
+            PAINEL ADMINISTRATIVO
+        </a>
+    </div>   
+      
+    <p class="stats-note">Estatísticas agregadas por país e estado/região. Nenhum endereço IP é armazenado.</p>
+    
+    <div class="red-line"></div>
 
     <section class="stats-panel">
-      <p class="section-label">CENTRAL Ø</p>
-
-      <!-- adicionar botão igual aos das telas administrativas. -->
-      <div class="top">
-          <a class="btn" href="admin/index.html">PAINEL ADMINISTRATIVO</a>
-      </div>
-
-      <h1>REGISTROS DE ACESSO</h1>
-      <p class="stats-note">Estatísticas agregadas por país e estado/região. Nenhum endereço IP é armazenado.</p>
-
       <div class="stats-total">
         <span>TOTAL DE ACESSOS</span>
         <strong id="statsTotal">------</strong>

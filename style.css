@@ -235,12 +235,17 @@ a {
   animation: glitch2 9s infinite;
 }
 
-.red-line {
+/* .red-line {
   width: 190px;
   height: 1px;
   margin: 30px auto 20px;
   background: linear-gradient(to right, transparent, var(--red), transparent);
   box-shadow: 0 0 12px rgba(255, 0, 0, .28);
+} */
+.red-line {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--red), transparent);
+    margin: 22px 0 32px
 }
 
 .subtitle {
